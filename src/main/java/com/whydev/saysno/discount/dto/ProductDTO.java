@@ -19,7 +19,8 @@ public class ProductDTO {
     private String product;
     private String category;
     private int price;
-    // private int sale_price;
+    private int sale_price;
+    private String discountDescription;
 
     public static ProductDTO toProductDTO(ProductEntity productEntity){
         ProductDTO productDTO = new ProductDTO();
