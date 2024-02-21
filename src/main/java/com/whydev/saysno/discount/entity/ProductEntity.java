@@ -13,13 +13,10 @@ public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private Long id;
-
     @Column
     private String product;
-
     @Column
     private String category;
-
     @Column
     private int price;
 

@@ -16,10 +16,10 @@ public class ProductDTO {
     private String product;
     private String category;
     private int price;
+    // private int sale_price;
 
     public static ProductDTO toProductDTO(ProductEntity productEntity){
         ProductDTO productDTO = new ProductDTO();
-        productDTO.setId(productEntity.getId());
         productDTO.setProduct(productEntity.getProduct());
         productDTO.setCategory(productEntity.getCategory());
         productDTO.setPrice(productEntity.getPrice());
