@@ -1,5 +1,7 @@
 package com.whydev.saysno.discount.dto;
 
+import com.whydev.saysno.discount.entity.ProductEntity;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
