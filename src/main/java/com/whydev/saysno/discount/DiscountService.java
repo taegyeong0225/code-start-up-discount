@@ -1,30 +1,38 @@
 package com.whydev.saysno.discount;
 
 import com.whydev.saysno.discount.policy.DiscountPolicy;
-//import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-//@RequiredArgsConstructor
 public class DiscountService {
 
-    private static List<DiscountPolicy> discountPolicies;
-    public static DiscountDTO discount(DiscountRequest request) {
-        // validation
-        // - errors
+    private List<DiscountPolicy> discountPolicies; // Instance-level list for non-static usage
 
-        // 할인 로직
+    public DiscountService(List<DiscountPolicy> discountPolicies) {
+        this.discountPolicies = discountPolicies;
+    }
 
+    public DiscountDTO discount(DiscountDTO request) {
+        // validateDiscountRequest(request);
+        int discountAmount = calculateDiscountAmount(request);
+        DiscountDTO result = new DiscountDTO();
+        result.setDiscountAmount(discountAmount);
+
+        return result;
+    }
+
+    // private void validateDiscountRequest(DiscountRequest request) {
+    // }
+
+    private int calculateDiscountAmount(DiscountDTO request) {
         int discountAmount = 0;
         for (DiscountPolicy discountPolicy : discountPolicies) {
             if (discountPolicy.isSatisfiedBy(request)) {
                 discountAmount += discountPolicy.calculate(request);
             }
         }
-
-        DiscountDTO result = new DiscountDTO();
-        return result;
+        return discountAmount;
     }
 }
