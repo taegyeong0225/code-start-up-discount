@@ -1,11 +1,7 @@
 GET http://localhost:8080/v1/discount
-
 Content-Type: application/json
 
 {
-  "product" : {
-    "id" : 1,
-    "orign_price" : 1000,
-    "category" : 10, // 의류 = 10, 전자기기 = 20, 음식 = 30 .... 등등
-  }
+  "category": "food",
+  "price": 15000
 }
