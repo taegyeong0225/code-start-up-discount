@@ -1,8 +1,10 @@
-FROM openjdk:19-jdk
+FROM openjdk:8-jdk
+
 WORKDIR /app
 COPY . .
 RUN chmod +x /app/gradlew
-RUN ./gradlew build --stacktrace
+RUN apk update && apk add findutils
+RUN ./gradlew build
 ARG JAR_FILE_PATH=build/libs/*.jar
+EXPOSE 8080
 ADD ${JAR_FILE_PATH} docker-springboot.jar
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/docker-springboot.jar"]

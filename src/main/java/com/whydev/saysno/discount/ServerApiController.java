@@ -13,10 +13,7 @@ public class ServerApiController {
     //클라이언트가 되는 서버에서 요청이 여기로 들어옴
     @GetMapping("/discount")
     public DiscountDTO discount(DiscountDTO discountDTO){
-        //Client에서 Response Entity 로 받고 있기 떄문에
         log.info("discountDTO:{}",discountDTO.toString());
         return discountDTO;
     }
-
-
 }

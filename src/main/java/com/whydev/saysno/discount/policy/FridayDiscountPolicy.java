@@ -1,7 +1,6 @@
 package com.whydev.saysno.discount.policy;
 
 import com.whydev.saysno.discount.DiscountDTO;
-import com.whydev.saysno.discount.DiscountRequest;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
