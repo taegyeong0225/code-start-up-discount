@@ -16,6 +16,7 @@ public class ApiController {
 
     @GetMapping("/discount")
     public DiscountDTO getDiscountInfo(DiscountRequest discountRequest) {
-        return discountService.discount(discountRequest);
+        DiscountDTO discountDTO = new DiscountDTO();
+        return discountService.discount(discountDTO);
     }
 }

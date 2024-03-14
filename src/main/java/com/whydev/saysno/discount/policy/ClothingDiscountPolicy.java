@@ -1,7 +1,6 @@
 package com.whydev.saysno.discount.policy;
 
 import com.whydev.saysno.discount.DiscountDTO;
-import com.whydev.saysno.discount.DiscountRequest;
 
 public class ClothingDiscountPolicy implements DiscountPolicy {
     // 상품 카테고리가 의류인 경우 5% 할인
