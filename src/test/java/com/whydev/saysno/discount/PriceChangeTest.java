@@ -7,5 +7,5 @@ import static com.whydev.saysno.discount.DataAccessLayer.DiscountDTO.Category.CL
 
 @DataJpaTest
 public class PriceChangeTest {
-    DiscountDTO discountDTO = DiscountDTO.builder().category(CLOTHS).build();
+    // DiscountDTO discountDTO = DiscountDTO.builder().category(CLOTHS).build();
 }

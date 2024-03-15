@@ -31,9 +31,10 @@ public class DiscountService {
         int discountAmount = 0;
         for (DiscountPolicy discountPolicy : discountPolicies) {
             if (discountPolicy.isSatisfiedBy(request)) {
-                discountAmount += discountPolicy.calculate(request);
+                discountAmount += discountPolicy.calculate(request).getOriginPrice();
             }
         }
         return discountAmount;
     }
+
 }
