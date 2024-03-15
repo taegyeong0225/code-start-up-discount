@@ -1,5 +1,7 @@
-package com.whydev.saysno.discount;
+package com.whydev.saysno.discount.PresentationLayer;
 
+import com.whydev.saysno.discount.DataAccessLayer.DiscountDTO;
+import com.whydev.saysno.discount.ServiceLayer.DiscountService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,6 +1,7 @@
-package com.whydev.saysno.discount.policy;
+package com.whydev.saysno.discount.ServiceLayer.policy;
 
-import com.whydev.saysno.discount.DiscountDTO;
+import com.whydev.saysno.discount.DataAccessLayer.DiscountDTO;
+import com.whydev.saysno.discount.DataAccessLayer.Money;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -17,9 +18,10 @@ public class FridayDiscountPolicy implements DiscountPolicy {
     }
 
     @Override
-    public int calculate(DiscountDTO discountDTO) {
+    public Money calculate(DiscountDTO discountDTO) {
         // 모든 상품 10% 할인
-        int originalPrice = discountDTO.getOriginPrice();
-        return (int) (originalPrice * 0.1);
+        Money originalPrice = discountDTO.getOriginPrice();
+        double discountedPrice = originalPrice.getOriginPrice() * 0.1;
+        return new Money(discountedPrice);
     }
 }

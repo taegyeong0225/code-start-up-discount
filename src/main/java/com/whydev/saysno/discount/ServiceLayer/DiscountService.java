@@ -1,6 +1,7 @@
-package com.whydev.saysno.discount;
+package com.whydev.saysno.discount.ServiceLayer;
 
-import com.whydev.saysno.discount.policy.DiscountPolicy;
+import com.whydev.saysno.discount.DataAccessLayer.DiscountDTO;
+import com.whydev.saysno.discount.ServiceLayer.policy.DiscountPolicy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 @Service
 public class DiscountService {
 
-    private List<DiscountPolicy> discountPolicies; // Instance-level list for non-static usage
+    private List<DiscountPolicy> discountPolicies;
 
     public DiscountService(List<DiscountPolicy> discountPolicies) {
         this.discountPolicies = discountPolicies;

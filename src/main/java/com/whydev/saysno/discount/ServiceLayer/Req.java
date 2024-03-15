@@ -1,4 +1,4 @@
-package com.whydev.saysno.discount;
+package com.whydev.saysno.discount.ServiceLayer;
 
 public class Req<T>{
 
